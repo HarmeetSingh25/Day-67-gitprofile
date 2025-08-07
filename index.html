@@ -1,0 +1,66 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>GitHub Profile Viewer</title>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            html,body{
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+        <div class="w-full max-w-xl p-6 bg-white rounded-xl shadow-xl">
+        <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">
+            GitHub Profile Viewer
+        </h1>
+
+        <!-- Search Form -->
+        <div class="flex space-x-4 mb-6">
+            <input
+            id="username-input"
+            type="text"
+            placeholder="Enter GitHub username"
+            class="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-400"
+            />
+            <input
+            type="submit"
+            id="submit"
+            class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            Search
+            />
+        </div>
+
+        <!-- Profile Card -->
+        <div id="profile-card" class="hidden">
+            <div class="flex items-center space-x-4 mb-4">
+            <img
+                id="profile_img"
+                class="w-20 h-20 rounded-full border-2 border-blue-600"
+            />
+            <div>
+                <h2 id="profile-name" class="text-xl font-semibold text-gray-800"></h2>
+                <p id="bio" class="text-sm text-gray-600"></p>
+            </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+            <div><strong>Location:</strong> <span id="location"></span></div>
+            <div><strong>Followers:</strong> <span id="followers"></span></div>
+            <div><strong>Following:</strong> <span id="following"></span></div>
+            </div>
+        </div>
+
+        <!-- Error -->
+        <p id="error-msg" class="text-red-500 text-center mt-4 hidden">
+            User not found. Please try again.
+        </p>
+        </div>
+        <script src="script.js"></script>
+    </body>
+    </html>
